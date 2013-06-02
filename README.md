@@ -11,7 +11,7 @@ $ pip install braintree
 ```
 
 copy & update code from:
-https://github.com/braintree/braintree_python_guide/tree/master/1_getting_paid
+https://github.com/braintree/braintree_python_guide.git
 
 
 

@@ -1,0 +1,29 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <h1>Braintree Credit Card Transaction Form</h1>
+    <div>
+      <form action="/create_transaction" method="POST" id="braintree-payment-form">
+        <p>
+          <label>Card Number</label>
+          <input type="text" size="20" autocomplete="off" data-encrypted-name="number" />
+        </p>
+        <p>
+          <label>CVV</label>
+          <input type="text" size="4" autocomplete="off" data-encrypted-name="cvv" />
+        </p>
+        <p>
+          <label>Expiration (MM/YYYY)</label>
+          <input type="text" size="2" data-encrypted-name="month" /> / <input type="text" size="4" data-encrypted-name="year" />
+        </p>
+        <input type="submit" id="submit" />
+      </form>
+    </div>
+    <script type="text/javascript" src="https://js.braintreegateway.com/v1/braintree.js"></script>
+    <script type="text/javascript">
+      var braintree = Braintree.create("MIIBCgKCAQEAr8EuzpsJFvQWjIhamTH7d6IKN3vFwS3Kym3+5gTy/14FCOBtbfY329RDh62WTy0p4qfBdqXrh7RqfahXQyGL97qQJtYdhpzC+ALszCL9emcyyHqgcAw1ceLRwHli55bcerDI1AKjGs0W6UMRsJwh+DdLJtU9fwqyshvEoS7Md4BHaimK6pwwmnmeW5MMoiqIGv4uJv0G0t0w50J7eiSuxulP1Gj0UGkRN/N14iTs8at9C4foq1m/PXqt56LvQbbhS03l0H2cICuuhRZeeRQ/CKA+JdH6ZAYXU9rhO4jB7293hnRlEi4gbdCvt8FOVO5x/isyvZ6ohM3I4ZaeoiV/jQIDAQAB");
+      braintree.onSubmitEncryptForm('braintree-payment-form');
+    </script>
+  </body>
+</html>
